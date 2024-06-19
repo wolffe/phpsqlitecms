@@ -1,8 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', true);
-ini_set('log_errors', true);
-ini_set("error_log", "php-error.log");
 /**
  * phpSQLiteCMS - a simple and lightweight PHP web content management system
  * based on PHP and SQLite
