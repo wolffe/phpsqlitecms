@@ -1,6 +1,26 @@
 phpSQLiteCMS
 ============
 
+## Contributions
+
+All contributions and PRs are welcome. Be mindful of the goals and roadmap below.
+
+Goals
+----=
+
+* Fix all current warnings and errors
+* Fix all security issues
+* Simplify the codebase
+
+Roadmap
+-------
+
+* Remove PostGRE SQL support
+* Remove MySQL support
+* Add "Copy URL" feature to File Manager
+* Update all code to PHP 7+ standards
+* Update all code to PSR-12 standards
+
 <a href="https://getbutterfly.com/phpsqlitecms/">phpSQLiteCMS</a> is a simple and lightweight open source CMS based on <a href="https://www.php.net/">PHP</a> and <a href="https://sqlite.org/">SQLite</a>. As SQLite is file-based, it just runs "out of the box" without installation.
 
 System requirements
@@ -20,12 +40,3 @@ Installation
      * **cms/cache** - cache directory, needs to be writable if you want to use the caching feature
      * **cms/media** and **cms/files** - need to be writable if you want to use the file uploader
 3. Ready! You should now be able to access the index page by browsing to the address you uploaded phpSQLiteCMS (e.g. https://example.org/path/to/phpsqlitecms/). To administrate the page, go to https://example.org/path/to/phpsqlitecms/cms/. The default admin userdata is: username: admin, password: admin.
-
-Roadmap
--------
-
-* Remove PostGRE SQL support
-* Remove MySQL support
-* Add "Copy URL" feature to File Manager
-* Update all code to PHP 7+ standards
-* Update all code to PSR-12 standards
