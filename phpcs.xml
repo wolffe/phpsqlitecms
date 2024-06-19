@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="PHPSQLiteCMS">
+    <description>PHPSQLiteCMS PHPCS ruleset.</description>
+
+    <!-- Set the PHP version to avoid the "PHP version not specified" warning -->
+    <config name="php_version" value="8.0"/>
+
+    <!-- Specify the directories to include in the scan -->
+    <file>.</file>
+
+    <!-- Exclude specific directories or files if necessary -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/.git/*</exclude-pattern>
+    <exclude-pattern>*/.github/*</exclude-pattern>
+
+    <!-- Include coding standard rules -->
+    <rule ref="PSR12"/>
+
+    <!-- Increase the maximum line length to 120 characters -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+    <!-- Exclude all commenting rules -->
+    <exclude name="Generic.Commenting.*"/>
+    <exclude name="PEAR.Commenting.*"/>
+    <exclude name="Squiz.Commenting.*"/>
+
+    <!-- Exclude all whitespace rules -->
+    <exclude name="Squiz.WhiteSpace.*"/>
+</ruleset>

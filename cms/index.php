@@ -6,7 +6,7 @@
  * @author Mark Hoschek < mail at mark-hoschek dot de >
  * @copyright Mark Hoschek 2014
  * @version 3.x
- * @link http://phpsqlitecms.net/
+ * @link https://getbutterfly.com/phpsqlitecms/
  * @package phpSQLiteCMS
  *
  * The MIT License (MIT)

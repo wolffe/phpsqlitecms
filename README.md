@@ -17,6 +17,7 @@ All contributions and PRs are welcome. Be mindful of the goals and roadmap below
 
 * Remove PostGRE SQL support
 * Remove MySQL support
+* Remove caching (SQLite3+ is fast anyway, and caching should be server-side)
 * Add "Copy URL" feature to File Manager
 * Update all code to PHP 7+ standards
 * Update all code to PSR-12 standards
