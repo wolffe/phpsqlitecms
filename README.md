@@ -20,3 +20,12 @@ Installation
      * **cms/cache** - cache directory, needs to be writable if you want to use the caching feature
      * **cms/media** and **cms/files** - need to be writable if you want to use the file uploader
 3. Ready! You should now be able to access the index page by browsing to the address you uploaded phpSQLiteCMS (e.g. https://example.org/path/to/phpsqlitecms/). To administrate the page, go to https://example.org/path/to/phpsqlitecms/cms/. The default admin userdata is: username: admin, password: admin.
+
+Roadmap
+-------
+
+* Remove PostGRE SQL support
+* Remove MySQL support
+* Add "Copy URL" feature to File Manager
+* Update all code to PHP 7+ standards
+* Update all code to PSR-12 standards
