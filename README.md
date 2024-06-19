@@ -5,15 +5,13 @@ phpSQLiteCMS
 
 All contributions and PRs are welcome. Be mindful of the goals and roadmap below.
 
-Goals
-----=
+### Goals
 
 * Fix all current warnings and errors
 * Fix all security issues
 * Simplify the codebase
 
-Roadmap
--------
+### Roadmap
 
 * Remove PostGRE SQL support
 * Remove MySQL support
