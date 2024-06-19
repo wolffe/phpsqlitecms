@@ -1,6 +1,8 @@
 phpSQLiteCMS
 ============
 
+<a href="https://getbutterfly.com/phpsqlitecms/">phpSQLiteCMS</a> is a simple and lightweight open source CMS based on <a href="https://www.php.net/">PHP</a> and <a href="https://sqlite.org/">SQLite</a>. As SQLite is file-based, it just runs "out of the box" without installation.
+
 ## Contributions
 
 All contributions and PRs are welcome. Be mindful of the goals and roadmap below.
@@ -18,8 +20,6 @@ All contributions and PRs are welcome. Be mindful of the goals and roadmap below
 * Add "Copy URL" feature to File Manager
 * Update all code to PHP 7+ standards
 * Update all code to PSR-12 standards
-
-<a href="https://getbutterfly.com/phpsqlitecms/">phpSQLiteCMS</a> is a simple and lightweight open source CMS based on <a href="https://www.php.net/">PHP</a> and <a href="https://sqlite.org/">SQLite</a>. As SQLite is file-based, it just runs "out of the box" without installation.
 
 System requirements
 -------------------
