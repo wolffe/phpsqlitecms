@@ -1,12 +1,17 @@
 <?php
 // autoload required classes:
-function __autoload($class_name)
- {
-  require_once(BASE_PATH.'cms/includes/classes/'.$class_name.'.class.php');
- }
+//function __autoload($class_name)
+// {
+//  require_once(BASE_PATH.'cms/includes/classes/'.$class_name.'.class.php');
+// }
+function my_autoload($class_name) {
+    require_once(BASE_PATH . 'cms/includes/classes/' . $class_name . '.class.php');
+}
 
-if(get_magic_quotes_gpc())
- {
+spl_autoload_register('my_autoload');
+
+//if(get_magic_quotes_gpc())
+// {
   function stripslashes_deep($value)
    {
     $value = is_array($value) ? array_map('stripslashes_deep', $value) : stripslashes($value);
@@ -16,7 +21,7 @@ if(get_magic_quotes_gpc())
   $_GET = array_map('stripslashes_deep', $_GET);
   $_COOKIE = array_map('stripslashes_deep', $_COOKIE);
   $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
- }
+// }
 
 function showme($what)
  {

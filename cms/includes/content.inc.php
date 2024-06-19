@@ -207,7 +207,7 @@ if($data['description']) $template->assign('description', $data['description']);
 elseif($settings['default_description']) $template->assign('description', $settings['default_description']);
 else $template->assign('description', '');
 
-$template->assign('category', htmlspecialchars($data['category']));
+$template->assign('category', htmlspecialchars($data['category'] ? $data['category'] : ''));
 $template->assign('page_info', $data['page_info']);
 $template->assign('content', $content);
 $template->assign('sidebar_1', $sidebar_1);

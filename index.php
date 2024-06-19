@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', true);
+ini_set('log_errors', true);
+ini_set("error_log", "php-error.log");
 /**
  * phpSQLiteCMS - a simple and lightweight PHP web content management system
  * based on PHP and SQLite
@@ -38,7 +42,8 @@ define('CACHE_DIR', 'cms/cache/');
 // get query string passed by mod_rewrite:
 if(isset($_GET['qs']))
  {
-  if(get_magic_quotes_gpc()) $_GET['qs'] = stripslashes($_GET['qs']);
+  //if(get_magic_quotes_gpc())
+  $_GET['qs'] = stripslashes($_GET['qs']);
   $qs = $_GET['qs'];
  }
 else

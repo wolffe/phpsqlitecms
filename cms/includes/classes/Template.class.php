@@ -18,6 +18,7 @@ class Template
   */
   public function assign($name,$value)
    {
+    //print_r($this->_templateVars[$name]);
     $this->_templateVars[$name] = $value;
    }
 

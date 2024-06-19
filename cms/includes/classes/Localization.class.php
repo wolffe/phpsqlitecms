@@ -120,7 +120,7 @@ class Localization
 
   private function _callbackFormatTime($format, $timestamp)
    {
-    return strftime($format, $timestamp);
+    return date($format, $timestamp);
    }
  }
 ?>

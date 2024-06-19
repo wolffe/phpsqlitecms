@@ -139,27 +139,22 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
     $send_pingbacks = $settings['pingbacks_enabled'] ? 1 : 0;
    }
 
-  // edit submitted:
-  if(isset($_POST['content']))
-   {
-    if(isset($_POST['id']))
-     {
-      $dbr = Database::$content->prepare("SELECT id,author,edit_permission,edit_permission_general FROM ".Database::$db_settings['pages_table']." WHERE id=:id LIMIT 1");
-      $dbr->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
-      $dbr->execute();
-      $data = $dbr->fetch();
-      if(!isset($data['id']))
-       {
-        $errors[] = 'page_doesnt_exist';
-       }
-      elseif(!is_authorized_to_edit($_SESSION[$settings['session_prefix'].'user_id'],$_SESSION[$settings['session_prefix'].'user_type'],$data['author'],$data['edit_permission'],$data['edit_permission_general']))
-       {
-        $errors[] = 'no_authorization_edit';
-       }
-     }
+    // edit submitted:
+    if (isset($_POST['content'])) {
+        if (isset($_POST['id'])) {
+            $dbr = Database::$content->prepare("SELECT id, author, edit_permission, edit_permission_general FROM " . Database::$db_settings['pages_table'] . " WHERE id=:id LIMIT 1");
+            $dbr->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
+            $dbr->execute();
+            $data = $dbr->fetch();
 
-    if(empty($errors))
-     {
+            if (!isset($data['id'])) {
+                $errors[] = 'page_doesnt_exist';
+            } elseif (!is_authorized_to_edit($_SESSION[$settings['session_prefix'] . 'user_id'], $_SESSION[$settings['session_prefix'] . 'user_type'], $data['author'], $data['edit_permission'], $data['edit_permission_general'])) {
+                $errors[] = 'no_authorization_edit';
+            }
+        }
+
+        if (empty($errors)) {
       $_POST['page'] = isset($_POST['page']) ? trim($_POST['page']) : '';
       $_POST['title'] = isset($_POST['title']) ? trim($_POST['title']) : '';
       $_POST['gcb_1'] = isset($_POST['gcb_1']) ? trim($_POST['gcb_1']) : '';
@@ -281,12 +276,11 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
 
      }
 
-    if(empty($errors))
-     {
-      $dbr = Database::$content->prepare("SELECT id, page FROM ".Database::$db_settings['pages_table']." WHERE lower(page)=:page LIMIT 1");
-      $dbr->bindValue(':page', strtolower($_POST['page']), PDO::PARAM_STR);
-      $dbr->execute();
-      $data = $dbr->fetch();
+    if (empty($errors)) {
+        $dbr = Database::$content->prepare("SELECT id, page FROM " . Database::$db_settings['pages_table'] . " WHERE lower(page)=:page LIMIT 1");
+        $dbr->bindValue(':page', strtolower($_POST['page']), PDO::PARAM_STR);
+        $dbr->execute();
+        $data = $dbr->fetch();
       if(isset($data['id']))
        {
         #if(isset($_POST['id']) && intval($_POST['id'])==intval($data['id']) && empty($_POST['edit_mode']))
@@ -347,7 +341,7 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
         $dbr->bindParam(':status', $_POST['status'], PDO::PARAM_INT);
         $dbr->bindParam(':id', $_POST['id'], PDO::PARAM_INT);
         $dbr->execute();
-        #print_r(Database::$content->errorInfo());
+        //print_r(Database::$content->errorInfo());
        }
       else
        {
@@ -413,7 +407,6 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
         $pingback = new Pingback();
         $pingback->ping(BASE_URL.$_POST['page'], $page_content);
        }
-      
       if(intval($_POST['status'])==0)
        {
         header('Location: '.BASE_URL.ADMIN_DIR.'index.php?mode=pages');
@@ -421,7 +414,10 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
        }
       else
        {
-        header('Location: '.BASE_URL.$_POST['page']);
+        //echo '<p>Should redirect to '.BASE_URL.$_POST['page'].'</p>';
+        //header('Location: '.BASE_URL.$_POST['page']);
+        header('Location: '.BASE_URL.ADMIN_DIR.'index.php?mode=edit&id='.$_POST['id']);
+        //https://getbutterfly.com/demo/cms/cms/index.php?mode=edit&id=53
        }
      }
     else
