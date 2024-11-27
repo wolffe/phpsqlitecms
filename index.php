@@ -31,6 +31,7 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+ini_set('session.cookie_samesite','Strict');
 session_start();
 
 define('CACHE_DIR', 'cms/cache/');
