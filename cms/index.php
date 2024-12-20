@@ -33,6 +33,7 @@
 
 try
  {
+  ini_set('session.cookie_samesite','Strict');
   session_start();
   define('IN_INDEX', TRUE);
   #include('./config/db_settings.conf.php');
